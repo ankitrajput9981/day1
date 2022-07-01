@@ -62,3 +62,42 @@ int main() {
     }
     return 0;
 }  // } Driver Code Ends
+                    
+                    
+  //dfs of the graph
+                     void dfs(int V,vector<int>adj[],vector<int>&vec,vector<bool>&vis,int s)
+    {
+        vis[s]=true;
+        vec.push_back(s);
+        for(int v:adj[s])
+        {
+            if(vis[v]==false)
+            {
+                dfs(V,adj,vec,vis,v);
+            }
+        }
+    }
+    vector<int> dfsOfGraph(int V, vector<int> adj[]) {
+        // Code here
+        vector<int>vec;
+        vector<bool>vis(V,false);
+        dfs(V,adj,vec,vis,0);
+        return vec;
+    }
+ 
+ 
+ 
+ 
+ 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
